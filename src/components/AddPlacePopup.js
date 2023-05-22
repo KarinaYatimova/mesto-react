@@ -21,7 +21,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   function handleSubmit(e) {
     e.preventDefault();
     onAddPlace({
-      placename: cardPlaceName,
+      placeName: cardPlaceName,
       link: cardLink,
     });
   }

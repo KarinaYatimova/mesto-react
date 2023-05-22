@@ -87,9 +87,9 @@ function App() {
       });
   }
 
-  function handleAddPlaceSubmit({ placename, link }) {
+  function handleAddPlaceSubmit({ placeName, link }) {
     api
-      .addNewCard({ placename, link })
+      .addNewCard({ placeName, link })
       .then((newCard) => {
         setCards([newCard, ...cards]);
         closeAllPopups();
@@ -126,7 +126,7 @@ function App() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsImagePopupOpen(false);
-    setSelectedCard(false);
+    setSelectedCard({});
     setIsPopupWithConfirmationOpen(false);
   }
 
@@ -169,13 +169,13 @@ function App() {
           isOpen={isPopupWithConfirmationOpen}
           onClose={closeAllPopups}
           onCardDeleteСonfirmation={handleCardDelete}
-        ></PopupWithConfirmation>
+        />
 
         <ImagePopup
           card={selectedCard}
           isOpen={isImagePopupOpen}
           onClose={closeAllPopups}
-        ></ImagePopup>
+        />
       </div>
     </CurrentUserContext.Provider>
   );

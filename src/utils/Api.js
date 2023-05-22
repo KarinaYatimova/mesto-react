@@ -5,7 +5,7 @@ class Api {
   }
 
   //проверка запроса
-  _checkRequest(res) {
+  _checkResponse(res) {
     if (res.ok) {
       return res.json();
     }
@@ -19,7 +19,7 @@ class Api {
       method: "GET",
       headers: this._headers,
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
@@ -33,7 +33,7 @@ class Api {
         about: job,
       }),
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
@@ -46,7 +46,7 @@ class Api {
         avatar: link,
       }),
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
@@ -56,21 +56,21 @@ class Api {
       method: "GET",
       headers: this._headers,
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
   //запрос на добавление новой карточки
-  addNewCard({ placename, link }) {
+  addNewCard({ placeName, link }) {
     return fetch(`${this._url}/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
-        name: placename,
+        name: placeName,
         link: link,
       }),
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
@@ -80,7 +80,7 @@ class Api {
       method: "DELETE",
       headers: this._headers,
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
@@ -90,7 +90,7 @@ class Api {
       method: "PUT",
       headers: this._headers,
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 
@@ -100,7 +100,7 @@ class Api {
       method: "DELETE",
       headers: this._headers,
     }).then((res) => {
-      return this._checkRequest(res);
+      return this._checkResponse(res);
     });
   }
 

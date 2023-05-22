@@ -1,6 +1,6 @@
 import PopupWithForm from "./PopupWithForm";
 
-function PopupWithConfirmation({ isOpen, onClose, onCardDeleteСonfirmation }) {
+function PopupWithСonfirmation({ isOpen, onClose, onCardDeleteСonfirmation }) {
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -15,8 +15,8 @@ function PopupWithConfirmation({ isOpen, onClose, onCardDeleteСonfirmation }) {
       onClose={onClose}
       buttonText="Да"
       onSubmit={handleSubmit}
-    ></PopupWithForm>
+    />
   );
 }
 
-export default PopupWithConfirmation;
+export default PopupWithСonfirmation;
